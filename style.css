@@ -19,6 +19,7 @@ body {
 .menu__container {
   display: flex;
   justify-content: space-between;
+  gap: 1em;
   align-items: center;
   width: 90%;
   margin: 0 auto;
@@ -114,6 +115,15 @@ body {
     overflow: hidden;
   }
 
+  .menu__item--active {
+    --transform: rotate(0);
+    --background: #5e7094;
+  }
+
+  .menu__item--show {
+    background-color: var(--background);
+  }
+
   .menu__links {
     position: fixed;
     max-width: 400px;
@@ -125,6 +135,12 @@ body {
     overflow-y: auto;
     display: grid;
     grid-auto-rows: max-content;
+    transform: translateX(100%);
+  }
+
+  .menu__links--show {
+    transform: unset;
+    width: 100%;
   }
 
   .menu__link {
